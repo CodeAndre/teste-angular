@@ -7,6 +7,9 @@ import {
   FileSystemDirectoryEntry,
 } from 'ngx-file-drop';
 
+//my add
+import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,10 +21,15 @@ export class AppComponent implements OnInit {
   public schedules: any = [];
   public schedulePeriod = null;
   public selectedChannel = null;
-  public displayedColumns = ['type', 'status', 'image', 'channel', 'date'];
+  public displayedColumns: string[] = ['type', 'status', 'image', 'channel', 'date'];
   private form: FormGroup;
 
-  public constructor(private http: HttpClient) {
+
+  //Minha adição para Data Source
+  schedules_data = new MatTableDataSource<HttpClient>();
+
+  public constructor(private http: HttpClient)
+   {
     this.form = new FormBuilder().group({
       channel: null,
       image: null,
@@ -47,12 +55,15 @@ export class AppComponent implements OnInit {
     });
   }
 
-  public selectChannel(channel) {
+  public selectChannel(channel: any) {
     this.selectedChannel = channel;
     this.form.patchValue({ channel });
   }
 
-  public schedule() {
+
+  // ####  PRIMEIRO PROBLEMA DA TABELA --> LINKAR OS DADOS   ####
+  // ###### Dados da tabela ###### //
+  public schedule() { 
     if (!this.form.valid) return; // TODO: give feedback
     this.http
       .post('api/schedules', this.form.value, { responseType: 'json' })
@@ -68,6 +79,7 @@ export class AppComponent implements OnInit {
         });
       });
   }
+// ###############################
 
   public dropped(files: NgxFileDropEntry[]) {
     this.files = files;
@@ -84,15 +96,15 @@ export class AppComponent implements OnInit {
     }
   }
 
-  public fileOver(event) {
+  public fileOver(event: any) {
     console.log(event);
   }
 
-  public fileLeave(event) {
+  public fileLeave(event: any) {
     console.log(event);
   }
 
-  public changeTab($event) {
+  public changeTab($event: { index: number; }) {
     this.form.patchValue({ type: $event.index === 0 ? 'feed' : 'story' });
   }
 }

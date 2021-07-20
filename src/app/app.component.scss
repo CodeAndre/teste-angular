@@ -1,3 +1,5 @@
+/*##### HEADER ########*/
+
 .page-header {
   border: 0;
   margin: 0;
@@ -16,7 +18,7 @@
 }
 
 .navbar {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   height: 53px;
   border: 0;
   border-bottom: 1px solid #dbe1e8;
@@ -36,6 +38,7 @@
   flex-flow: row wrap;
   align-items: center;
   height: 100%;
+  margin-right: 4rem;
 }
 
 .navbar-nav {
@@ -43,7 +46,7 @@
   margin: 0;
 }
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin-right: 2rem;
 }
 .nav {
   padding-left: 0;
@@ -53,19 +56,22 @@
 
 .navbar-profiles-item-wrap {
   display: flex;
+  width: 100%;
 }
-
 
 .navbar-profiles-item, .navbar-profiles .profile-thumbnail {
   margin-right: 5px;
   cursor: pointer;
 }
+
 figure {
   margin: 0;
 }
+
 figure {
   margin: 1em 40px;
 }
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -94,7 +100,7 @@ figure {
   width: 25px;
   margin: auto;
   border-radius: 50%;
-  position: relative;
+  position: relative; 
 }
 .small, small {
   font-size: 85%;
@@ -116,3 +122,73 @@ img {
 img {
   border: 0;
 }
+
+
+//////  ORGANIZAÇÃo
+
+.page-header{
+  border: 3px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.profile-thumbnail {
+  border:  1px solid gold;
+}
+.navbar-profiles-item-wrap_borda_1 {
+  border: 2px solid blue;
+}
+
+.content_table_newPost {
+  border: 4px solid orange;
+}
+.section_agenda {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  border:  1px solid black;
+}
+.center {
+  border: 1px solid green;
+}
+
+
+//Header
+.container_profile {
+  margin-left: 1rem;
+}
+.username_details {
+  margin-left: 4rem;
+  margin-top: -1rem;
+}
+.username {
+  font-size: 28px;
+}
+.generic_details {
+  margin-top: 12px;
+  font-size: 18px;
+}
+
+
+//Tabela
+
+.schedules {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 12px;
+  margin-left: 1rem;
+}
+.table_info {
+  width: 100%;
+}
+.mat-header-cell {
+  background-color: rgb(81, 81, 114);
+}
+.mat-row{
+  background-color: rgb(92, 92, 131);
+}
+
+
+
+
+
+

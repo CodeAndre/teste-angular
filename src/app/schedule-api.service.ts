@@ -65,7 +65,7 @@ export const scheduleFactory = (data) => ({
   media_type: 'photo',
   image: {
     id: Math.floor(Math.random() * 1000),
-    filename: data.image.name,
+    filename: data.image.username,
     is_album: false,
     url:
       'https://media.postgrain.com/uploads/images/2021/03/30/46519/9dbfcf76d9e30edbae8faef13f2ac700236ae25e.jpg',
